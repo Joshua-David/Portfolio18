@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/style.css",
+	"sources": [
+		"../sass/style.scss"
+	],
+	"sourcesContent": [
+		"body {\n  background: #222;\n}\n"
+	],
+	"mappings": ";AAAA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,IAAK;CAClB",
+	"names": []
+}
