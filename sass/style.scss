@@ -1,9 +1,10 @@
 @import 'base';
 $roboto: 'Roboto Mono', monospace;
 $black: #222222;
-$darkGrey: #666666;
-$white: #E2E2E2;
-$marginTop: 10px;
+$darkGrey: #545454;
+$midGrey: #BDBDBD;
+$white: #D5D5D5;
+$marginTop: 5px;
 $marginBottom: 20px;
 $marginLeft: 10px;
 $marginRight: 10px;
@@ -15,14 +16,13 @@ body {
   margin: 0;
 
   p {
-    color: #fff;
     @include mq('leftCol') {}
   }
 }
 // ••••••••• Work •••••••••
 
 .tags {
-  margin-top: -42px;
+  margin-top: -37px;
   margin-left: -11px;
 
   p {
@@ -30,10 +30,10 @@ body {
     display: inline-block;
     margin: 0;
     font-family: $roboto;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 14px;
     padding: 8px 0;
-    color: $white;
+    color: $midGrey;
 
     span {
       padding: 6px 10px;
@@ -47,6 +47,10 @@ body {
 }
 
 .content-container {
+  opacity: 0;
+  animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
   position: relative;
   padding: $marginTop $marginRight 0;
   border-top: solid 1px $darkGrey;
@@ -84,6 +88,7 @@ body {
 
     h3 {
       margin: 15px 0 30px;
+      color: $midGrey;
       font-size: 18px;
       line-height: 26px;
       font-weight: lighter;
@@ -96,7 +101,7 @@ body {
 
   .main-media {
     margin: $marginTop 0;
-    max-width: 1110px;
+    max-width: 1050px;
     border-radius: 15px;
   }
 
@@ -115,27 +120,34 @@ body {
   }
 
   .main-media-bottom {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .mobile-view {
+    margin-top: 10px;
     border-radius: 0;
   }
 
   .section-title {
-    font-size: 18px;
-    line-height: 20px;
-    padding: 5px 10px 7px;
+    font-family: $roboto;
     margin: 0 0 -$marginLeft;
-    border-top: solid 1px $darkGrey;
     border-bottom: solid 1px $darkGrey;
-    font-weight: lighter;
+
+    h4 {
+      color: $midGrey;
+      margin: -1px;
+      font-size: 13px;
+      line-height: 16px;
+      padding: 6px 10px 8px;
+      display: inline-block;
+      border: solid 1px $darkGrey;
+    }
   }
 
   .description {
-    color: $white;
-    margin: $marginTop 0 $marginBottom*3;
-    font-size: 16px;
+    color: $midGrey;
+    margin: 5px 0 60px;
+    font-size: 15px;
     line-height: 25px;
     font-weight: lighter;
   }
@@ -169,5 +181,18 @@ body {
       top: 5px;
       transform: rotate(30deg);
     }
+  }
+}
+@keyframes fade-in-move-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(5rem);
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
