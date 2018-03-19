@@ -1,6 +1,173 @@
+@import 'base';
+$roboto: 'Roboto Mono', monospace;
+$black: #222222;
+$darkGrey: #666666;
+$white: #E2E2E2;
+$marginTop: 10px;
+$marginBottom: 20px;
+$marginLeft: 10px;
+$marginRight: 10px;
+
 body {
-  background: #222;
+  background: $black;
+  color: $white;
+  font-family: 'GTThin', sans-serif;
+  margin: 0;
+
   p {
     color: #fff;
+    @include mq('leftCol') {}
+  }
+}
+// ••••••••• Work •••••••••
+
+.tags {
+  margin-top: -42px;
+  margin-left: -11px;
+
+  p {
+    border: solid 1px $darkGrey;
+    display: inline-block;
+    margin: 0;
+    font-family: $roboto;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 8px 0;
+    color: $white;
+
+    span {
+      padding: 6px 10px;
+      border-right: solid 1px $darkGrey;
+
+      &:nth-last-child(1) {
+        border: none;
+      }
+    }
+  }
+}
+
+.content-container {
+  position: relative;
+  padding: $marginTop $marginRight 0;
+  border-top: solid 1px $darkGrey;
+  border-left: solid 1px $darkGrey;
+  max-width: 100%;
+  margin-bottom: 40vh;
+  @include mq('wide') {
+    margin-left: 240px;
+    margin-top: 68vh;
+  }
+
+  .underline1,
+  .underline2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom: solid 1px $darkGrey;
+  }
+
+  .underline1 {
+    top: 73px;
+  }
+
+  .underline2 {
+    top: 146px;
+  }
+
+  .header {
+    h1 {
+      margin: 0 0 10px;
+      font-size: 60px;
+      line-height: 70px;
+      font-weight: lighter;
+    }
+
+    h3 {
+      margin: 15px 0 30px;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: lighter;
+    }
+  }
+
+  .regular-width {
+    max-width: 620px;
+  }
+
+  .main-media {
+    margin: $marginTop 0;
+    max-width: 1110px;
+    border-radius: 15px;
+  }
+
+  .secondary-media {
+    margin: $marginTop 0;
+    max-width: 610px;
+  }
+
+  .small-media {
+    margin: $marginTop 0;
+    max-width: 220px;
+  }
+
+  .main-media-top {
+    margin-top: $marginTop*2;
+  }
+
+  .main-media-bottom {
+    margin-bottom: 40px;
+  }
+
+  .mobile-view {
+    border-radius: 0;
+  }
+
+  .section-title {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px 10px 7px;
+    margin: 0 0 -$marginLeft;
+    border-top: solid 1px $darkGrey;
+    border-bottom: solid 1px $darkGrey;
+    font-weight: lighter;
+  }
+
+  .description {
+    color: $white;
+    margin: $marginTop 0 $marginBottom*3;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: lighter;
+  }
+
+  .bottom-nav {
+    margin-left: -10px;
+    margin-top: 60px;
+    border-bottom: solid 1px $darkGrey;
+
+    div {
+      border-right: solid 1px $darkGrey;
+      border-top: solid 1px $darkGrey;
+      display: inline-block;
+
+      svg {
+        padding: 30px 36px;
+
+        polygon {
+          stroke: $white;
+        }
+      }
+    }
+
+    .right,
+    .up {
+      margin-left: -5px;
+    }
+
+    .up svg {
+      position: relative;
+      top: 5px;
+      transform: rotate(30deg);
+    }
   }
 }
