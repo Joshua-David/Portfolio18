@@ -173,18 +173,16 @@ body {
       line-height: 50px;
       font-weight: lighter;
       @include mq('tablet') {
-        margin-bottom: 10px;
         font-size: 45px;
         line-height: 55px;
       }
       @include mq('desktop') {
-        margin-bottom: 10px;
         font-size: 50px;
         line-height: 60px;
       }
       @include mq('leftCol') {
         font-size: 60px;
-        line-height: 70px;
+        line-height: 74px;
       }
     }
 
@@ -192,11 +190,10 @@ body {
       margin: 0 0 30px;
       color: $midGrey;
       font-size: 15px;
-      line-height: 23px;
-      font-weight: lighter;
+      line-height: 22px;
       @include mq('leftCol') {
         font-size: 18px;
-        line-height: 26px;
+        line-height: 25px;
       }
     }
   }
@@ -208,6 +205,16 @@ body {
     }
     @include mq('tablet') {
       max-width: 620px;
+    }
+  }
+
+  .extended-width {
+    max-width: 100%;
+    @include mq('mobileLandscape') {
+      max-width: 600px;
+    }
+    @include mq('tablet') {
+      max-width: 700px;
     }
   }
 }
@@ -269,6 +276,31 @@ body {
     }
   }
 
+  .medium-media {
+    margin: $marginTop 0;
+    max-width: 300px;
+    @include mq('tablet') {
+      max-width: 450px;
+    }
+  }
+
+  .alt-media {
+    margin: $marginTop 0;
+    max-width: 200px;
+    @include mq('tablet') {
+      max-width: 300px;
+    }
+  }
+
+  .mobile-media {
+    width: 49.2%;
+    padding: 1px 0;
+    @include mq('phablet') {
+      padding: 3px;
+      width: 31.9%;
+    }
+  }
+
   .main-media-top {
     margin-top: $marginTop*2;
   }
@@ -309,8 +341,7 @@ body {
     color: $midGrey;
     margin: 5px 0 30px;
     font-size: 14px;
-    line-height: 24px;
-    font-weight: lighter;
+    line-height: 20px;
     max-width: 100%;
     margin-right: 10px;
     @include mq('desktop') {
@@ -323,6 +354,10 @@ body {
       line-height: 25px;
     }
   }
+
+  .less-pad {
+    margin-bottom: 20px;
+  }
 }
 
 .bottom-nav {
@@ -333,6 +368,46 @@ body {
     padding-bottom: 20px;
     transform: translateY(-20px);
   }
+}
+
+.bio-container {
+  margin-top: 40vh;
+  font-family: $roboto;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-left: -1px;
+  padding: 0 10px;
+
+  p {
+    font-weight: 100;
+  }
+  @include mq('tablet') {
+    margin-left: 50px;
+  }
+  @include mq('desktop') {
+    margin-left: 150px;
+  }
+  @include mq('leftCol') {
+    margin-left: 190px;
+  }
+  @include mq('wide') {
+    margin-left: 240px;
+  }
+}
+
+.home-container {
+  margin-top: 0;
+  margin-bottom: 100px;
+  padding-bottom: 0;
+  border-bottom: none;
+
+  h1 {
+    color: $midGrey;
+  }
+}
+
+.home-container-top {
+  margin-top: 40vh;
 }
 @keyframes fade-in-move-up {
   0% {
