@@ -11,7 +11,7 @@ $marginRight: 10px;
 
 body {
   background: $black;
-  color: $white;
+  color: $midGrey;
   font-family: 'GTThin', sans-serif;
   margin: 0;
   max-width: 100vw;
@@ -187,13 +187,14 @@ body {
     }
 
     h3 {
-      margin: 0 0 30px;
+      margin: 10px 0 30px;
       color: $midGrey;
       font-size: 15px;
       line-height: 22px;
+      font-weight: lighter;
       @include mq('leftCol') {
         font-size: 18px;
-        line-height: 25px;
+        line-height: 27px;
       }
     }
   }
@@ -377,6 +378,10 @@ body {
   font-size: 14px;
   margin-left: -1px;
   padding: 0 10px;
+  opacity: 0;
+  animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
 
   p {
     font-weight: 100;
@@ -401,8 +406,24 @@ body {
   padding-bottom: 0;
   border-bottom: none;
 
+  &:hover {
+    .home-image {
+      display: block;
+    }
+  }
+
   h1 {
     color: $midGrey;
+  }
+
+  .home-image {
+    animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    max-width: 390px;
+    position: absolute;
+    top: -50px;
+    right: 500px;
+    mix-blend-mode: screen;
+    display: none;
   }
 }
 
