@@ -32,28 +32,44 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  transform-origin: 50% 50%;
   z-index: 9999;
+  opacity: 0;
+  animation: fade-in 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
   @include mq('tablet') {
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 0;
+  }
+
+  .button-wrap {
+    padding: 20px;
   }
 
   &:hover {
-    animation: home-button 1s cubic-bezier(0.23, 1, 0.32, 1);
-    animation-delay: 0.2s;
-    animation-fill-mode: forwards;
+    .line1 {
+      transform-origin: 50% 50%;
+      animation: home-button-1 0.2s;
+      animation-fill-mode: forwards;
+    }
+
+    .line2 {
+      transform-origin: 50% 50%;
+      animation: home-button-2 0.2s;
+      animation-fill-mode: forwards;
+    }
   }
 
   svg {
-    circle {
-      opacity: 0;
-    }
+    display: block;
 
-    polygon {
-      stroke: $midGrey;
-      fill: $black;
+    path {
+      stroke: #777;
     }
+  }
+
+  .line2 {
+    margin-top: 20px;
   }
 }
 
@@ -116,6 +132,8 @@ body {
 
   .underline1,
   .underline2,
+  .underline3,
+  .underline4,
   .underlineMobile1,
   .underlineMobile2 {
     position: absolute;
@@ -147,6 +165,32 @@ body {
     }
     @include mq('leftCol') {
       top: 146px;
+    }
+  }
+
+  .underline3 {
+    top: 150px;
+    @include mq('tablet') {
+      top: 160px;
+    }
+    @include mq('desktop') {
+      top: 170px;
+    }
+    @include mq('leftCol') {
+      top: 219px;
+    }
+  }
+
+  .underline4 {
+    top: 200px;
+    @include mq('tablet') {
+      top: 210px;
+    }
+    @include mq('desktop') {
+      top: 220px;
+    }
+    @include mq('leftCol') {
+      top: 292px;
     }
   }
 
@@ -310,6 +354,15 @@ body {
     }
   }
 
+  .mobile-media-2 {
+    width: 49.2%;
+    padding: 1px 0;
+    @include mq('phablet') {
+      padding: 3px;
+      width: 49%;
+    }
+  }
+
   .main-media-top {
     margin-top: $marginTop*2;
   }
@@ -426,12 +479,25 @@ body {
 
   .home-image {
     animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-    max-width: 390px;
+    max-width: 290px;
     position: absolute;
     top: -50px;
-    right: 500px;
+    right: 0;
     mix-blend-mode: screen;
     display: none;
+    @include mq('tablet') {
+      max-width: 390px;
+      right: 100px;
+    }
+    @include mq('desktop') {
+      right: 300px;
+    }
+    @include mq('leftCol') {
+      right: 250px;
+    }
+    @include mq('wide') {
+      right: 500px;
+    }
   }
 }
 
@@ -441,22 +507,43 @@ body {
 @keyframes fade-in-move-up {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(5rem);
     transform: translateY(5rem);
   }
 
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
-@keyframes home-button {
+@keyframes fade-in {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
   }
 
   100% {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes home-button-1 {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+@keyframes home-button-2 {
+  0% {
+    transform: translateY(0);
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
   }
 }
