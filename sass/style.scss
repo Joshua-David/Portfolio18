@@ -28,6 +28,10 @@ body {
 }
 // ••••••••• Templates •••••••••
 
+.home-link {
+  display: block;
+}
+
 .home {
   position: fixed;
   top: 0;
@@ -447,6 +451,11 @@ body {
 
 .no-pad {
   padding-bottom: 0;
+}
+
+.bottom-nav-link {
+  display: block;
+  -webkit-transition: all 0.5s;
 }
 
 .bottom-nav {
