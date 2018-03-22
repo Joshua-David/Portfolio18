@@ -498,28 +498,60 @@ body a {
   }
 }
 
-.content-container .mobile-media {
-  width: 49.2%;
-  padding: 1px 0;
+.content-container .flex-media {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px -5px;
+  max-width: calc(100% + 10px);
+  border-radius: 5px;
 }
 
-@media (min-width: 660px) {
-  .content-container .mobile-media {
-    padding: 3px;
-    width: 31.9%;
+@media (min-width: 480px) {
+  .content-container .flex-media {
+    border-radius: 10px;
   }
+}
+
+@media (min-width: 740px) {
+  .content-container .flex-media {
+    border-radius: 10px;
+    max-width: 710px;
+  }
+}
+
+@media (min-width: 980px) {
+  .content-container .flex-media {
+    max-width: 790px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .content-container .flex-media {
+    border-radius: 15px;
+    max-width: 910px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .content-container .flex-media {
+    max-width: 1010px;
+  }
+}
+
+.content-container .mobile-media {
+  flex: 1;
+  width: 32%;
+  height: 32%;
+  padding: 5px;
 }
 
 .content-container .mobile-media-2 {
-  width: 49.2%;
-  padding: 1px 0;
-}
-
-@media (min-width: 660px) {
-  .content-container .mobile-media-2 {
-    padding: 3px;
-    width: 49%;
-  }
+  flex: 1;
+  width: 48%;
+  height: 48%;
+  padding: 5px;
 }
 
 .content-container .main-media-top {
@@ -590,6 +622,10 @@ body a {
 
 .content-container .less-pad {
   margin-bottom: 20px;
+}
+
+.no-pad {
+  padding-bottom: 0;
 }
 
 .bottom-nav {

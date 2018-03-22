@@ -345,22 +345,45 @@ body {
     }
   }
 
-  .mobile-media {
-    width: 49.2%;
-    padding: 1px 0;
-    @include mq('phablet') {
-      padding: 3px;
-      width: 31.9%;
+  .flex-media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px -5px;
+    max-width: calc(100% + 10px);
+    border-radius: 5px;
+    @include mq('mobileLandscape') {
+      border-radius: 10px;
+    }
+    @include mq('tablet') {
+      border-radius: 10px;
+      max-width: 710px;
+    }
+    @include mq('desktop') {
+      max-width: 790px;
+    }
+    @include mq('leftCol') {
+      border-radius: 15px;
+      max-width: 910px;
+    }
+    @include mq('wide') {
+      max-width: 1010px;
     }
   }
 
+  .mobile-media {
+    flex: 1;
+    width: 32%;
+    height: 32%;
+    padding: 5px;
+  }
+
   .mobile-media-2 {
-    width: 49.2%;
-    padding: 1px 0;
-    @include mq('phablet') {
-      padding: 3px;
-      width: 49%;
-    }
+    flex: 1;
+    width: 48%;
+    height: 48%;
+    padding: 5px;
   }
 
   .main-media-top {
@@ -420,6 +443,10 @@ body {
   .less-pad {
     margin-bottom: 20px;
   }
+}
+
+.no-pad {
+  padding-bottom: 0;
 }
 
 .bottom-nav {
