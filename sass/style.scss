@@ -78,7 +78,7 @@ body {
 }
 
 .tags {
-  margin-top: -35px;
+  margin-top: -36px;
   margin-left: -11px;
   @include mq('desktop') {
     margin-top: -37px;
@@ -89,9 +89,9 @@ body {
     display: inline-block;
     margin: 0;
     font-family: $roboto;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: normal;
-    line-height: 12px;
+    line-height: 13px;
     padding: 8px 0;
     color: $midGrey;
     @include mq('desktop') {
@@ -115,7 +115,7 @@ body {
 .content-container {
   box-sizing: border-box;
   position: relative;
-  padding: $marginTop $marginRight 0;
+  padding: $marginTop 10px 0;
   border-top: solid 1px $darkGrey;
   border-left: solid 1px $darkGrey;
   width: 100%;
@@ -125,6 +125,7 @@ body {
     width: auto;
     position: relative;
     right: 0;
+    padding-right: 50px;
   }
   @include mq('desktop') {
     margin-left: 150px;
@@ -144,9 +145,13 @@ body {
   .underlineMobile1,
   .underlineMobile2 {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 10px;
+    right: 10px;
     border-bottom: solid 1px $darkGrey;
+    max-width: 100%;
+    @include mq('tablet') {
+      right: 50px;
+    }
   }
 
   .underline1 {
@@ -233,20 +238,24 @@ body {
       }
       @include mq('leftCol') {
         font-size: 60px;
-        line-height: 74px;
+        line-height: 69px;
+        margin: 3px 0;
       }
     }
 
-    h3 {
-      max-width: 500px;
-      margin: 5px 0 30px;
-      color: $secondaryGrey;
-      font-size: 14px;
-      line-height: 22px;
-      font-weight: bold;
-      @include mq('tablet') {
-        font-size: 15px;
-        line-height: 25px;
+    p {
+      font-family: $roboto;
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: normal;
+      position: relative;
+      top: 15px;
+      @include mq('desktop') {
+        font-size: 13px;
+        line-height: 13px;
+      }
+      @include mq('leftCol') {
+        top: 40px;
       }
     }
   }
@@ -279,34 +288,51 @@ body {
   animation-fill-mode: forwards;
   margin-bottom: 120px;
   border-bottom: solid 1px $darkGrey;
-  margin-top: 65vh;
+  margin-top: 25vh;
   padding-bottom: 5px;
   background: $black;
   @include mq('tablet') {
     padding-bottom: 10px;
+    margin-top: 35vh;
   }
 
+  .first-media,
   .main-media {
     margin-top: $marginTop;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1160px;
     border-radius: 5px;
     @include mq('mobileLandscape') {
       border-radius: 10px;
     }
     @include mq('tablet') {
       border-radius: 10px;
-      max-width: 700px;
     }
     @include mq('desktop') {
       margin-top: 10px;
-      max-width: 780px;
     }
     @include mq('leftCol') {
       border-radius: 15px;
-      max-width: 900px;
     }
-    @include mq('wide') {
-      max-width: 1000px;
+  }
+
+  .flex-media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px -5px;
+    width: calc(100% + 10px);
+    max-width: 1160px;
+    border-radius: 5px;
+    @include mq('mobileLandscape') {
+      border-radius: 10px;
+    }
+    @include mq('tablet') {
+      border-radius: 10px;
+    }
+    @include mq('leftCol') {
+      border-radius: 15px;
     }
   }
 
@@ -354,33 +380,6 @@ body {
     }
   }
 
-  .flex-media {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 5px -5px;
-    max-width: calc(100% + 10px);
-    border-radius: 5px;
-    @include mq('mobileLandscape') {
-      border-radius: 10px;
-    }
-    @include mq('tablet') {
-      border-radius: 10px;
-      max-width: 710px;
-    }
-    @include mq('desktop') {
-      max-width: 790px;
-    }
-    @include mq('leftCol') {
-      border-radius: 15px;
-      max-width: 910px;
-    }
-    @include mq('wide') {
-      max-width: 1010px;
-    }
-  }
-
   .mobile-media {
     flex: 1;
     width: 32%;
@@ -402,7 +401,7 @@ body {
   .main-media-bottom {
     margin-bottom: 30px;
     @include mq('leftCol') {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
   }
 
@@ -411,20 +410,34 @@ body {
     border-radius: 0;
   }
 
+  .first-media {
+    margin-top: 20px;
+    @include mq('leftCol') {
+      margin-top: 50px;
+    }
+  }
+
+  .margin-top {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  .no-margin-top {
+    margin-top: 10px;
+  }
+
   .section-title {
-    margin: 0 0 -$marginLeft;
+    // margin: 0 10px;
     border-bottom: solid 1px $darkGrey;
 
     h4 {
       color: $midGrey;
-      margin: -1px;
+      margin: 0 0 10px;
       font-family: $roboto;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: normal;
-      line-height: 12px;
-      padding: 6px 10px 8px;
+      line-height: 13px;
       display: inline-block;
-      border: solid 1px $darkGrey;
       @include mq('desktop') {
         font-size: 13px;
         line-height: 14px;
@@ -436,7 +449,7 @@ body {
     color: $secondaryGrey;
     margin: 5px 0 30px;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
     font-weight: bold;
     max-width: 100%;
     margin-right: 10px;
@@ -484,7 +497,8 @@ a:visited div p {
 }
 
 .bio-container {
-  margin-top: 40vh;
+  margin-top: 35vh;
+  margin-bottom: 35vh;
   font-family: $roboto;
   line-height: 1.8;
   font-size: 14px;
@@ -513,19 +527,18 @@ a:visited div p {
 }
 
 .home-container {
-  margin-top: 100px;
+  margin-top: 0;
   margin-bottom: 100px;
   padding-bottom: 0;
   border-bottom: none;
+  @include mq('leftCol') {
+    padding-bottom: 3px;
+  }
 
   &:hover {
     .home-image {
       display: block;
     }
-  }
-
-  h1 {
-    color: $midGrey;
   }
 
   .home-image {
@@ -544,14 +557,19 @@ a:visited div p {
       left: 480px;
     }
     @include mq('wide') {
-      left: 500px;
+      left: 550px;
     }
   }
 }
 
 .home-container-top {
-  margin-top: 60vh;
-  margin-bottom: 300px;
+  margin-top: 35vh;
+  margin-bottom: 200px;
+  height: 800px;
+
+  h1 {
+    display: none;
+  }
 }
 @keyframes fade-in-move-up {
   0% {

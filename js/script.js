@@ -8,7 +8,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -17,7 +17,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -26,7 +26,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -35,7 +35,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -44,7 +44,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -53,7 +53,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -62,7 +62,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
@@ -71,7 +71,7 @@
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '40px',
+    distance: '30px',
     reset: false
   });
 
