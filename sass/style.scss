@@ -223,11 +223,14 @@ body {
   }
 
   .header {
-    h1 {
+    span {
       margin: 0 0 5px;
       font-size: 40px;
       line-height: 50px;
       font-weight: lighter;
+      padding-bottom: 10px;
+      box-shadow: inset 0 -14px 0 0 #222222, inset 0 -15px 0 0 #4D4D4D;
+      text-shadow: -8px 0 0 #222222, 0 -8px 0 #222222, 8px 0 0 #222222, 0 8px 0 #222222;
       @include mq('tablet') {
         font-size: 45px;
         line-height: 55px;
@@ -237,8 +240,8 @@ body {
         line-height: 60px;
       }
       @include mq('leftCol') {
-        font-size: 60px;
-        line-height: 69px;
+        font-size: 70px;
+        line-height: 84px;
         margin: 3px 0;
       }
     }
@@ -276,7 +279,7 @@ body {
       max-width: 600px;
     }
     @include mq('tablet') {
-      max-width: 700px;
+      max-width: 720px;
     }
   }
 }
