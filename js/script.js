@@ -66,21 +66,12 @@
     reset: false
   });
 
-  sr.reveal('.home-reveal', {
-    viewFactor: 0.1,
-    duration: 1000,
-    scale: 1,
-    easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-    distance: '30px',
-    reset: false
-  });
-
-  // sr.reveal('.bottom-nav-in', {
-  //   viewFactor: 0.3,
+  // sr.reveal('.home-reveal', {
+  //   viewFactor: 0.1,
   //   duration: 1000,
   //   scale: 1,
   //   easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-  //   distance: '80px',
+  //   distance: '30px',
   //   reset: false
   // });
 

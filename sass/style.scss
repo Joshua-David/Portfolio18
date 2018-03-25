@@ -127,8 +127,6 @@ body {
   box-sizing: border-box;
   position: relative;
   padding: $marginTop 10px 0;
-  // border-top: solid 1px $darkGrey;
-  // border-left: solid 1px $darkGrey;
   width: 100%;
   margin-left: -1px;
   @include mq('tablet') {
@@ -136,7 +134,6 @@ body {
     width: auto;
     position: relative;
     right: 0;
-    // padding-right: 50px;
   }
   @include mq('desktop') {
     margin-left: 150px;
@@ -148,89 +145,7 @@ body {
   @include mq('wide') {
     margin-left: 240px;
   }
-  // .underline1,
-  // .underline2,
-  // .underline3,
-  // .underline4,
-  // .underlineMobile1,
-  // .underlineMobile2 {
-  //   position: absolute;
-  //   left: 10px;
-  //   right: 10px;
-  //   border-bottom: solid 1px $darkGrey;
-  //   max-width: 100%;
-  //   @include mq('tablet') {
-  //     right: 50px;
-  //   }
-  // }
-  //
-  // .underline1 {
-  //   top: 50px;
-  //   @include mq('tablet') {
-  //     top: 55px;
-  //   }
-  //   @include mq('desktop') {
-  //     top: 60px;
-  //   }
-  //   @include mq('leftCol') {
-  //     top: 73px;
-  //   }
-  // }
-  //
-  // .underline2 {
-  //   top: 100px;
-  //   @include mq('tablet') {
-  //     top: 110px;
-  //   }
-  //   @include mq('desktop') {
-  //     top: 120px;
-  //   }
-  //   @include mq('leftCol') {
-  //     top: 146px;
-  //   }
-  // }
-  //
-  // .underline3 {
-  //   top: 150px;
-  //   @include mq('tablet') {
-  //     top: 160px;
-  //   }
-  //   @include mq('desktop') {
-  //     top: 170px;
-  //   }
-  //   @include mq('leftCol') {
-  //     top: 219px;
-  //   }
-  // }
-  //
-  // .underline4 {
-  //   top: 200px;
-  //   @include mq('tablet') {
-  //     top: 210px;
-  //   }
-  //   @include mq('desktop') {
-  //     top: 220px;
-  //   }
-  //   @include mq('leftCol') {
-  //     top: 292px;
-  //   }
-  // }
-  //
-  // .underlineMobile1 {
-  //   display: block;
-  //   top: 150px;
-  //   @include mq('mobileMedium') {
-  //     display: none;
-  //   }
-  // }
-  //
-  // .underlineMobile2 {
-  //   display: block;
-  //   top: 100px;
-  //   @include mq('tablet') {
-  //     display: none;
-  //   }
-  // }
+
   .header {
     span {
       color: $midGrey;
@@ -304,10 +219,10 @@ body {
 
   .mobile-only {
     display: block;
-    margin-top: 20px;
+    // margin-top: 20px;
     max-width: 100%;
     @include mq('mobileLandscape') {
-      display: none;
+      display: none!important;
     }
   }
 
@@ -524,7 +439,6 @@ body {
 }
 
 .bottom-nav {
-  // background: $black;
   padding-bottom: 10px;
   transition: transform 0.4s;
 
@@ -552,10 +466,7 @@ a:visited div p {
   .email-link {
     color: #777;
     transition: opacity 0.3s ease;
-    // display: none;
-    // @include mq('mobileMedium') {
-    //   display: contents;
-    // }
+
     &:hover {
       opacity: 0.6;
     }
@@ -567,27 +478,31 @@ a:visited div p {
     position: absolute;
     right: 0;
     top: -50px;
-    // margin-top: -10px;
-    // margin-bottom: 20px;
-    // mix-blend-mode: screen;
     display: none;
     @include mq('desktop') {
       max-width: 390px;
       top: -50px;
-      left: 450px;
+      left: 400px;
     }
     @include mq('leftCol') {
-      top: -50px;
-      left: 520px;
+      max-width: 490px;
+      top: -70px;
+      left: 450px;
     }
     @include mq('wide') {
-      top: -40px;
+      top: -70px;
       left: 550px;
     }
   }
 }
 
+.dark span {
+  // color: #777;
+}
+
 .home-reveal {
+  position: relative;
+
   &:hover {
     .home-image {
       display: block;
@@ -622,16 +537,9 @@ a:visited div p {
   @include mq('tablet') {
     margin-top: 45vh;
   }
-  // margin-bottom: 200px;
-  .index {
-    // font-family: $roboto;
-    // font-size: 18px!important;
-    // line-height: 25px!important;
-    // padding-bottom: 5px!important;
-    // margin-top: -10px!important;
-  }
 
   .hide {
+    box-shadow: none!important;
     color: $bg!important;
   }
 }
