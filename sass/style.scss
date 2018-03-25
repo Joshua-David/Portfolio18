@@ -8,7 +8,7 @@ $marginTop: 5px;
 $marginBottom: 20px;
 $marginLeft: 10px;
 $marginRight: 10px;
-$bg: #161616;
+$bg: #181818;
 
 body {
   background: $bg;
@@ -69,7 +69,7 @@ body {
     display: block;
 
     path {
-      stroke: #555;
+      stroke: #777;
     }
   }
 
@@ -114,7 +114,10 @@ body {
     }
 
     .special-pad {
-      padding-left: 10px!important;
+      padding-left: 0!important;
+      @include mq('tablet') {
+        padding-left: 10px!important;
+      }
     }
   }
 }
@@ -331,7 +334,6 @@ body {
   .main-media {
     margin-top: $marginTop;
     width: 100%;
-    max-width: 1160px;
     border-radius: 5px;
     @include mq('mobileLandscape') {
       border-radius: 10px;
@@ -340,10 +342,15 @@ body {
       border-radius: 10px;
     }
     @include mq('desktop') {
+      max-width: 850px;
       margin-top: 10px;
     }
     @include mq('leftCol') {
+      max-width: 950px;
       border-radius: 15px;
+    }
+    @include mq('wide') {
+      max-width: 1100px;
     }
   }
 
@@ -354,16 +361,21 @@ body {
     justify-content: space-between;
     margin: 5px -5px;
     width: calc(100% + 10px);
-    max-width: 1160px;
+    max-width: 1100px;
     border-radius: 5px;
     @include mq('mobileLandscape') {
       border-radius: 10px;
     }
     @include mq('tablet') {
       border-radius: 10px;
+      max-width: 850px;
     }
     @include mq('leftCol') {
       border-radius: 15px;
+      max-width: 950px;
+    }
+    @include mq('wide') {
+      max-width: 1100px;
     }
   }
 
@@ -527,36 +539,6 @@ a:visited div p {
   border: solid 1px $darkGrey;
 }
 
-.bio-container {
-  margin-top: 35vh;
-  margin-bottom: 35vh;
-  font-family: $roboto;
-  line-height: 1.8;
-  font-size: 14px;
-  margin-left: -1px;
-  padding: 0 10px;
-  opacity: 0;
-  animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-
-  p {
-    font-weight: 300;
-  }
-  @include mq('tablet') {
-    margin-left: 50px;
-  }
-  @include mq('desktop') {
-    margin-left: 150px;
-  }
-  @include mq('leftCol') {
-    margin-left: 190px;
-  }
-  @include mq('wide') {
-    margin-left: 240px;
-  }
-}
-
 .home-container {
   margin-top: 0;
   margin-bottom: 100px;
@@ -567,26 +549,40 @@ a:visited div p {
     padding-bottom: 3px;
   }
 
+  .email-link {
+    color: #777;
+    transition: opacity 0.3s ease;
+    // display: none;
+    // @include mq('mobileMedium') {
+    //   display: contents;
+    // }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
   .home-image {
-    animation: fade-in-move-up 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: fade-in-move-up-image 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     max-width: 290px;
     position: absolute;
     right: 0;
-    z-index: 9;
+    top: -50px;
     // margin-top: -10px;
     // margin-bottom: 20px;
     // mix-blend-mode: screen;
     display: none;
     @include mq('desktop') {
       max-width: 390px;
+      top: -50px;
       left: 450px;
     }
     @include mq('leftCol') {
-      left: 480px;
+      top: -50px;
+      left: 520px;
     }
     @include mq('wide') {
-      top: -10px;
-      left: 700px;
+      top: -40px;
+      left: 550px;
     }
   }
 }
@@ -601,14 +597,31 @@ a:visited div p {
 
 .home-tag {
   font-family: $roboto;
-  font-size: 14px!important;
+  color: #777!important;
+  font-size: 12px!important;
   font-weight: normal!important;
   line-height: 0!important;
-  margin-top: 70px!important;
+  margin-top: 20px!important;
+  @include mq('mobileLandscape') {
+    margin-top: 25px!important;
+  }
+  @include mq('tablet') {
+    font-size: 13px!important;
+    margin-top: 50px!important;
+  }
+  @include mq('desktop') {
+    margin-top: 60px!important;
+  }
+  @include mq('leftCol') {
+    margin-top: 70px!important;
+  }
 }
 
 .home-container-top {
-  margin-top: 35vh;
+  margin-top: 67vh;
+  @include mq('tablet') {
+    margin-top: 45vh;
+  }
   // margin-bottom: 200px;
   .index {
     // font-family: $roboto;
@@ -630,6 +643,17 @@ a:visited div p {
 
   100% {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-move-up-image {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 0.5;
     transform: translateY(0);
   }
 }
