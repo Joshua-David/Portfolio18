@@ -4,7 +4,7 @@
   window.sr = ScrollReveal({ reset: true });
 
   sr.reveal('.main-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -13,7 +13,7 @@
   });
 
   sr.reveal('.secondary-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -22,7 +22,7 @@
   });
 
   sr.reveal('.mobile-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -31,7 +31,7 @@
   });
 
   sr.reveal('.mobile-media-2', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -40,7 +40,7 @@
   });
 
   sr.reveal('.small-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -49,7 +49,7 @@
   });
 
   sr.reveal('.alt-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -58,7 +58,7 @@
   });
 
   sr.reveal('.medium-media', {
-    viewFactor: 0.1,
+    viewFactor: 0.2,
     duration: 1000,
     scale: 1,
     easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -66,30 +66,16 @@
     reset: false
   });
 
-  // sr.reveal('.home-reveal', {
-  //   viewFactor: 0.1,
-  //   duration: 1000,
-  //   scale: 1,
-  //   easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-  //   distance: '30px',
-  //   reset: false
-  // });
-
-  $('.bottom-nav-link').click(function(e) {
-    e.preventDefault();
-    href = $(this).attr('href');
-    $("body").fadeOut( 450, function() {
-        window.location = href;
-    });
+  sr.reveal('.home-reveal', {
+    viewFactor: 0.7,
+    duration: 1000,
+    scale: 1,
+    easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+    distance: '30px',
+    reset: false
   });
 
-$('.home-link').click(function(e) {
-  e.preventDefault();
-  href = $(this).attr('href');
-  $("body").fadeOut( 450, function() {
-      window.location = href;
-  });
-});
+
 
 $("#to-work").click(function() {
     $('html, body').animate({
